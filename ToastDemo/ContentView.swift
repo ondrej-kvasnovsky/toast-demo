@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+  
   @State private var toast: Toast? = nil
+  
   var body: some View {
     VStack {
       Button {

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ToastModifier: ViewModifier {
+  
   @Binding var toast: Toast?
   @State private var workItem: DispatchWorkItem?
   
