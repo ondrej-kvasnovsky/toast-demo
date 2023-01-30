@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  @State private var toast: Toast? = nil
+  var body: some View {
+    VStack {
+      Button {
+        toast = Toast(type: .info, title: "Toast info", message: "Toast message")
+      } label: {
+        Text("Run")
+      }
     }
+    .toastView(toast: $toast)
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
